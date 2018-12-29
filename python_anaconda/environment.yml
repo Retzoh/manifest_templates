@@ -7,7 +7,6 @@ dependencies:
   - # List here all the conda-dependant dependencies of your project
   - python>=3.6
   # For tests
-  - pathlib
   - pytest>=3
   - pytest-cov
   - pathlib
