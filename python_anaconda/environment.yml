@@ -1,0 +1,16 @@
+name: python-example
+
+channels:
+  - conda-forge
+
+dependencies:
+  - # List here all the conda-dependant dependencies of your project
+  - python>=3.6
+  # For tests
+  - pathlib
+  - pytest>=3
+  - pytest-cov
+  - pathlib
+  - setuptools
+  - pip
+  - oauth2client

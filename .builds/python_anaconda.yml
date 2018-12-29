@@ -1,0 +1,31 @@
+image: debian/buster
+packages:
+  - wget
+sources:
+  - https://git.sr.ht/~retzoh/gtd_project_management
+tasks:
+  - conda_setup: |
+      wget -q http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
+      bash miniconda.sh -b -p $HOME/miniconda
+      export PATH="$HOME/miniconda/bin:$PATH"
+      . /home/build/miniconda/etc/profile.d/conda.sh
+      conda update --quiet --yes conda
+
+      cd manifest_templates/python_anaconda
+      conda env create -q
+
+  - setup: |
+      export PATH="$HOME/miniconda/bin:$PATH"
+      . /home/build/miniconda/etc/profile.d/conda.sh
+      conda activate python-example
+
+      cd manifest_templates/python_anaconda
+      pip install .
+
+  - integration_test: |
+      export PATH="$HOME/miniconda/bin:$PATH"
+      . /home/build/miniconda/etc/profile.d/conda.sh
+      conda activate python-example
+
+      cd manifest_templates/python_anaconda
+      pytest tests
