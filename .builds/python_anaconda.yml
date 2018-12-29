@@ -2,7 +2,7 @@ image: debian/buster
 packages:
   - wget
 sources:
-  - https://git.sr.ht/~retzoh/gtd_project_management
+  - https://git.sr.ht/~retzoh/manifest_templates
 tasks:
   - conda_setup: |
       wget -q http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
