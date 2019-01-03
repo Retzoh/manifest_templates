@@ -20,6 +20,7 @@ tasks:
       conda activate python-example
 
       cd manifest_templates/python_anaconda
+      ln ../README.md .
       pip install .
 
   - integration_test: |

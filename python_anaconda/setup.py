@@ -50,23 +50,23 @@ setup_params = dict(
     ],
 )
 
-
-# Version spec management:
-# * if a "VERSION" file exists, the version is read directly from it and set
-#   using the "version" key.
-# * otherwise, the version is extracted from the VCS using `setuptools_scm`,
-#   which is added to the "setup_requires" dependencies, and the
-#   "use_scm_version" key is set to True.
-version_file = Path("VERSION")
-if version_file.exists():
-    setup_params.update(dict(
-        version=version_file.read_text().strip()))
-else:
-    setup_requires = list(setup_params.get("setup_requires", []))
-    setup_requires.append("setuptools_scm")
-    setup_params.update(dict(
-        setup_requires=setup_requires,
-        use_scm_version=True))
+# Uncomment for automatic version spec management
+# # Version spec management:
+# # * if a "VERSION" file exists, the version is read directly from it and set
+# #   using the "version" key.
+# # * otherwise, the version is extracted from the VCS using `setuptools_scm`,
+# #   which is added to the "setup_requires" dependencies, and the
+# #   "use_scm_version" key is set to True.
+# version_file = Path("VERSION")
+# if version_file.exists():
+#     setup_params.update(dict(
+#         version=version_file.read_text().strip()))
+# else:
+#     setup_requires = list(setup_params.get("setup_requires", []))
+#     setup_requires.append("setuptools_scm")
+#     setup_params.update(dict(
+#         setup_requires=setup_requires,
+#         use_scm_version=True))
 
 
 setup(**setup_params)
