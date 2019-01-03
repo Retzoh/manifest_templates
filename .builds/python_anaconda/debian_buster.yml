@@ -14,7 +14,7 @@ tasks:
       cd manifest_templates/python_anaconda
       conda env create -q
 
-  - setup: |
+  - pip_setup: |
       export PATH="$HOME/miniconda/bin:$PATH"
       . /home/build/miniconda/etc/profile.d/conda.sh
       conda activate python-example
