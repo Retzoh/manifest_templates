@@ -4,23 +4,25 @@ packages:
 sources:
   - https://git.sr.ht/~retzoh/manifest_templates
 tasks:
-  - conda_setup: |
+  - install_conda: |
       wget -q http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
       bash miniconda.sh -b -p $HOME/miniconda
 
+      # Switching to bash is the easiest way I found to work with a .bashrc like
+      # If you have a better (working) way, feel free to email me
       sudo chsh -s /bin/bash build
 
       echo 'export PATH="$HOME/miniconda/bin:$PATH"' >> ~/.bash_setup
       echo '. /home/build/miniconda/etc/profile.d/conda.sh' >> ~/.bash_setup
 
-  - conda_install: |
+  - project_setup_conda: |
       . ~/.bash_setup
       conda update --quiet --yes conda
 
       cd manifest_templates/python_anaconda
       conda env create -q
 
-  - pip_install: |
+  - project_setup_pip: |
       . ~/.bash_setup
       # export PATH="$HOME/miniconda/bin:$PATH"
       # . /home/build/miniconda/etc/profile.d/conda.sh
