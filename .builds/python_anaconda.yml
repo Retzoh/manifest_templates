@@ -15,14 +15,14 @@ tasks:
       echo 'export PATH="$HOME/miniconda/bin:$PATH"' >> ~/.bash_setup
       echo '. /home/build/miniconda/etc/profile.d/conda.sh' >> ~/.bash_setup
 
-  - project_setup_conda: |
+  - setup_project_conda: |
       . ~/.bash_setup
       conda update --quiet --yes conda
 
       cd manifest_templates/python_anaconda
       conda env create -q
 
-  - project_setup_pip: |
+  - setup_project_pip: |
       . ~/.bash_setup
       # export PATH="$HOME/miniconda/bin:$PATH"
       # . /home/build/miniconda/etc/profile.d/conda.sh
