@@ -4,11 +4,12 @@ channels:
   - conda-forge
 
 dependencies:
-  - # List here all the conda-dependant dependencies of your project
+  # List here all the conda-dependant dependencies of your project
   - python>=3.6
   # For tests
   - pytest>=3
   - pytest-cov
+  # For your code to run (here are some placeholder packages)
   - pathlib
   - setuptools
   - pip
