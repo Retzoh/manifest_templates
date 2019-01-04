@@ -31,13 +31,15 @@ you will be working on.
 
 ## Repository structure
 - `[languages]`
-  - `.builds`
-    - `[architectures].yml`
-  - `src`
-    - minimal source code to test the CI pipelines on
-  - `tests`
-    - minimal testing utilities to test the CI on
-  - language-specific build/setup files
+    - `.builds`
+        - `[architectures].yml`
+    - `src`
+        - minimal source code to test the CI pipelines on
+    - `tests`
+        - minimal testing utilities to test the CI on
+    - language-specific build/setup files
+- [CONTRIBUTING.md](https://git.sr.ht/~retzoh/manifest_templates/tree/master/CONTRIBUTING.md)
+- [README.md](https://git.sr.ht/~retzoh/manifest_templates/tree/master/README.md)
 
 ## Contributing
 Notes on how to contribute can be found in [CONTRIBUTING.md](https://git.sr.ht/~retzoh/manifest_templates/tree/master/CONTRIBUTING.md).
