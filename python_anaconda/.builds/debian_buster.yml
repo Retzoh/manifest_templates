@@ -50,3 +50,11 @@ tasks:
       # Run the tests
       cd $repository_name/$package_path
       pytest --cov=python_example tests/
+
+  - run_project: |
+      . ~/.shell_setup
+      conda activate $package_name
+
+      # Run the tests
+      cd $repository_name/$package_path
+      python /src/python_example/__init__.py
