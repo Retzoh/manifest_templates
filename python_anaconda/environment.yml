@@ -9,8 +9,6 @@ dependencies:
   # For tests
   - pytest>=3
   - pytest-cov
-  # For your code to run (here are some placeholder packages)
-  - pathlib
+  # For your code to run
   - setuptools
   - pip
-  - oauth2client

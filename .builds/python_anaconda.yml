@@ -8,34 +8,25 @@ tasks:
       wget -q http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
       bash miniconda.sh -b -p $HOME/miniconda
 
-      # Switching to bash is the easiest way I found to work with a .bashrc like
-      # If you have a better (working) way, feel free to email me
-      sudo chsh -s /bin/bash build
-
-      echo 'export PATH="$HOME/miniconda/bin:$PATH"' >> ~/.bash_setup
-      echo '. /home/build/miniconda/etc/profile.d/conda.sh' >> ~/.bash_setup
+      echo 'export PATH="$HOME/miniconda/bin:$PATH"' >> ~/.shell_setup
+      echo '. /home/build/miniconda/etc/profile.d/conda.sh' >> ~/.shell_setup
 
   - setup_project_conda: |
-      . ~/.bash_setup
+      . ~/.shell_setup
       conda update --quiet --yes conda
 
       cd manifest_templates/python_anaconda
       conda env create -q
 
   - setup_project_pip: |
-      . ~/.bash_setup
-      # export PATH="$HOME/miniconda/bin:$PATH"
-      # . /home/build/miniconda/etc/profile.d/conda.sh
+      . ~/.shell_setup
       conda activate python-example
 
       cd manifest_templates/python_anaconda
-      ln ../README.md .
       pip install .
 
   - integration_test: |
-      . ~/.bash_setup
-      # export PATH="$HOME/miniconda/bin:$PATH"
-      # . /home/build/miniconda/etc/profile.d/conda.sh
+      . ~/.shell_setup
       conda activate python-example
 
       cd manifest_templates/python_anaconda
