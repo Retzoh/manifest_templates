@@ -9,7 +9,7 @@ language buy copying the appropriate manifest template.
 
 - [Grab a template](#grab-a-template)
   - [Supported languages](#supported-languages)
-- [Basic CI pipeline structure](basic-ci-pipeline-structure)
+- [Basic CI pipeline structure](#basic-ci-pipeline-structure)
 - [Repository structure](#repository-structure)
 - [Future work](future-work)
 
@@ -44,5 +44,5 @@ you will be working on.
 ## Contributing
 Notes on how to contribute can be found in [CONTRIBUTING.md](https://git.sr.ht/~retzoh/manifest_templates/tree/master/CONTRIBUTING.md).
 
-## Future work:
+## Future work
 - complete support for all images for [python (with anaconda)](https://git.sr.ht/~retzoh/manifest_templates/tree/master/python_anaconda/.builds)
