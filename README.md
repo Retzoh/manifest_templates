@@ -28,6 +28,10 @@ you will be working on.
 - build the project (if needed)
 - install the project (if needed)
 - run project tests
+- run the project
+
+Each language comes with a "hello world" project which the CI
+pipelines tests.
 
 ## Repository structure
 - `[languages]`
@@ -46,3 +50,5 @@ Notes on how to contribute can be found in [CONTRIBUTING.md](https://git.sr.ht/~
 
 ## Future work
 - complete support for all images for [python (with anaconda)](https://git.sr.ht/~retzoh/manifest_templates/tree/master/python_anaconda/.builds)
+- enable github-based contribution (see [CONTRIBUTING.md](https://git.sr.ht/~retzoh/manifest_templates/tree/master/CONTRIBUTING.md)
+for details)
