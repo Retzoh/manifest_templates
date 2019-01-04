@@ -30,4 +30,4 @@ tasks:
       conda activate python-example
 
       cd manifest_templates/python_anaconda
-      pytest tests
+      pytest --cov=python_example tests/
