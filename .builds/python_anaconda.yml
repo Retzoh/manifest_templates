@@ -23,7 +23,7 @@ tasks:
       . ~/.shell_setup
 
       #For one single package:
-      #Create an environment, install project dependencies & project in it
+      #Create an environment, install project dependencies in it
       cd $repository_name/$package_path; conda env create -q
 
       ##For multiple packages:
@@ -31,15 +31,15 @@ tasks:
       #conda create -q -n $package_name
       #conda activate $package_name
       #
-      ##Install one package & it's dependencies into the work environment
+      ##Install one package's dependencies into the work environment
       #cd $repository_name/$package_path
-      #conda install -q -n $package_name
+      #conda env update -q -n $package_name
 
   - setup_project_pip: |
       . ~/.shell_setup
       conda activate $package_name
 
-      # Install pip dependencies & the package
+      # Install package & it's pip dependencies
       cd $repository_name/$package_path
       pip install -q .
 
