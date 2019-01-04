@@ -5,7 +5,10 @@ This repository is a collection of language-specific CI setups for
 [sr.ht](https://meta.sr.ht/).
 
 Its purpose is to let you quickly setup new CI pipelines for your
-language by copying the appropriate manifest template.
+programming language by copying the appropriate manifest template.
+
+Send a mail to ~retzoh/manifest-templates-updates+subscribe@lists.sr.ht
+to be informed of updates.
 
 - [Pick a template](#pick-a-template)
   - [Supported languages](#supported-languages)
