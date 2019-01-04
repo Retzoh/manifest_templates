@@ -14,15 +14,16 @@ PACKAGE_PATH = PACKAGE_NAME.replace('-', '_')
 setup_params = dict(
     name=PACKAGE_NAME,
 
+    # pip dependencies declaration
     tests_require=[
         "pytest>=3.*",
         "pytest-cov",
     ],
-    # Declare here your pip dependencies
     install_requires=[
         "setuptools",
     ],
 
+    # Tell where the source code for the package is located
     package_dir={"": "src"},
     packages=find_packages("src", include=[PACKAGE_PATH, PACKAGE_PATH + ".*"]),
     include_package_data=True,

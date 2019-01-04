@@ -1,0 +1,2 @@
+"""Minimal installable & importable package
+"""

@@ -7,9 +7,10 @@ channels:
 dependencies:
   #List here all the conda-dependant dependencies of your project
   - python>=3.6
+  - pip
+  #Add conda-available pip-dependencies when available. Conda's dependency
+  #management works better. (`conda search [package]` to find out)
+  - setuptools
   #For tests
   - pytest>=3
   - pytest-cov
-  #For your code to run
-  - setuptools
-  - pip
