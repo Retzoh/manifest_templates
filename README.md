@@ -17,7 +17,7 @@ language buy copying the appropriate manifest template.
 Pick your language in the
 [repository tree](https://git.sr.ht/~retzoh/manifest_templates/tree),
 open the `.builds` folder and choose yml file named after the
-architecture ([doc](https://man.sr.ht/builds.sr.ht/compatibility.md))
+architecture ([man](https://man.sr.ht/builds.sr.ht/compatibility.md))
 you will be working on.
 
 ### Supported languages
