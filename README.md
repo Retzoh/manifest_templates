@@ -4,16 +4,16 @@ Manifest templates
 This repository is a collection of language-specific CI setups for
 [sr.ht](https://meta.sr.ht/).
 
-It's purpose is to let you quickly setup new CI pipelines for your
-language buy copying the appropriate manifest template.
+Its purpose is to let you quickly setup new CI pipelines for your
+language by copying the appropriate manifest template.
 
-- [Grab a template](#grab-a-template)
+- [Pick a template](#pick-a-template)
   - [Supported languages](#supported-languages)
 - [Basic CI pipeline structure](#basic-ci-pipeline-structure)
 - [Repository structure](#repository-structure)
 - [Future work](#future-work)
 
-## Grab a template
+## Pick a template
 Pick your language in the
 [repository tree](https://git.sr.ht/~retzoh/manifest_templates/tree),
 open the `.builds` folder and choose yml file named after the
