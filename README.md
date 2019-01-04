@@ -11,7 +11,7 @@ language buy copying the appropriate manifest template.
   - [Supported languages](#supported-languages)
 - [Basic CI pipeline structure](#basic-ci-pipeline-structure)
 - [Repository structure](#repository-structure)
-- [Future work](future-work)
+- [Future work](#future-work)
 
 ## Grab a template
 Pick your language in the
