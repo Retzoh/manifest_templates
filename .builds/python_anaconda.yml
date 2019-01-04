@@ -9,30 +9,44 @@ environment:
   package_path: python_anaconda
 tasks:
   - install_conda: |
+      #Get & intall conda
       wget -q http://repo.continuum.io/miniconda/\
       Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
       bash miniconda.sh -b -p $HOME/miniconda
 
+      #Store shell (conda) setup
       echo 'export PATH="$HOME/miniconda/bin:$PATH"' >> ~/.shell_setup
       echo '. /home/build/miniconda/etc/profile.d/conda.sh' >> ~/.shell_setup
 
   - setup_project_conda: |
+      #Load the shell (conda) setup
       . ~/.shell_setup
-      conda update --quiet --yes conda
 
+      ##For one single package:
+      ##Create an environment, install project dependencies & project in it
+      #cd $repository_name/$package_path; conda env create -q
+
+      #For multiple packages:
+      #Create & activate a work environment (with name package_name)
+      conda create -q -n $package_name
+      conda activate $package_name
+
+      #Install one package & it's dependencies into the work environment
       cd $repository_name/$package_path
-      conda env create -q
+      conda install -q -n $package_name
 
   - setup_project_pip: |
       . ~/.shell_setup
       conda activate $package_name
 
+      # Install pip dependencies & the package
       cd $repository_name/$package_path
-      pip install .
+      pip install -q .
 
   - integration_test: |
       . ~/.shell_setup
       conda activate $package_name
 
+      # Run the tests
       cd $repository_name/$package_path
       pytest --cov=python_example tests/

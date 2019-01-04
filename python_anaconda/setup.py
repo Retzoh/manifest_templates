@@ -1,4 +1,4 @@
-"""Install the package {PACKAGE_NAME}
+"""Install pip dependencies & the package {PACKAGE_NAME}
 
 See test/test_import.py for an import example
 """

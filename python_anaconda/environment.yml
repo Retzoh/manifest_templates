@@ -1,3 +1,7 @@
+"""Conda dependencies
+
+Will be read when running `conda env update
+"""
 name: python-example
 
 channels:
