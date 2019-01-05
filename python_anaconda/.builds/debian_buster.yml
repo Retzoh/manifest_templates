@@ -6,7 +6,8 @@ sources:
 environment:
   repository_name: manifest_templates
   package_name: python-example
-  package_path: python_anaconda
+  package_path: python_example
+  language: python_anaconda
 tasks:
   - install_conda: |
       #Get & intall conda
@@ -24,7 +25,7 @@ tasks:
 
       #For one single package:
       #Create an environment, install project dependencies in it
-      cd $repository_name/$package_path; conda env create -q
+      cd $repository_name/$language; conda env create -q
 
       ##For multiple packages:
       ##Create & activate a work environment (with name package_name)
@@ -32,7 +33,7 @@ tasks:
       #conda activate $package_name
       #
       ##Install one package's dependencies into the work environment
-      #cd $repository_name/$package_path
+      #cd $repository_name/$language
       #conda env update -q -n $package_name
 
   - setup_project_pip: |
@@ -40,7 +41,7 @@ tasks:
       conda activate $package_name
 
       # Install package & it's pip dependencies
-      cd $repository_name/$package_path
+      cd $repository_name/$language
       pip install -q .
 
   - integration_test: |
@@ -48,13 +49,13 @@ tasks:
       conda activate $package_name
 
       # Run the tests
-      cd $repository_name/$package_path
-      pytest --cov=python_example tests/
+      cd $repository_name/$language
+      pytest --cov=$package_path tests/
 
   - run_project: |
       . ~/.shell_setup
       conda activate $package_name
 
       # Run the tests
-      cd $repository_name/$package_path
-      python src/python_example/__init__.py
+      cd $repository_name/$language
+      python src/$package_path/__init__.py
