@@ -1,4 +1,4 @@
-image: debian/buster
+image: debian/sid
 packages:
   - wget
 sources:
