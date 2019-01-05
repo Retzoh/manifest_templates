@@ -8,13 +8,14 @@ Its purpose is to let you quickly setup new CI pipelines for your
 programming language by copying the appropriate manifest template.
 
 Send a mail to ~retzoh/manifest-templates-updates+subscribe@lists.sr.ht
-to be informed of updates.
+to subscribe to updates.
 
 - [Use a template](#use-a-template)
   - [Supported languages](#supported-languages)
 - [Basic CI pipeline structure](#basic-ci-pipeline-structure)
 - [Repository structure](#repository-structure)
 - [Future work](#future-work)
+- [Discussion](#discussion)
 
 ## Use a template
 - Pick your language in the
@@ -59,3 +60,8 @@ Notes on how to contribute can be found in [CONTRIBUTING.md](https://git.sr.ht/~
 - complete support for all images for [python (with anaconda)](https://git.sr.ht/~retzoh/manifest_templates/tree/master/python_anaconda/.builds)
 - enable github-based contribution (see [CONTRIBUTING.md](https://git.sr.ht/~retzoh/manifest_templates/tree/master/CONTRIBUTING.md)
 for details)
+
+## Discussion
+Have an issue or something to discuss about the project ?
+[This tracker](https://todo.sr.ht/~retzoh/manifest-templates-discussions)
+is the appropriate place.
