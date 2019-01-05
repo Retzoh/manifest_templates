@@ -10,18 +10,22 @@ programming language by copying the appropriate manifest template.
 Send a mail to ~retzoh/manifest-templates-updates+subscribe@lists.sr.ht
 to be informed of updates.
 
-- [Pick a template](#pick-a-template)
+- [Use a template](#use-a-template)
   - [Supported languages](#supported-languages)
 - [Basic CI pipeline structure](#basic-ci-pipeline-structure)
 - [Repository structure](#repository-structure)
 - [Future work](#future-work)
 
-## Pick a template
-Pick your language in the
+## Use a template
+- Pick your language in the
 [repository tree](https://git.sr.ht/~retzoh/manifest_templates/tree),
 open the `.builds` folder and choose yml file named after the
 architecture ([man](https://man.sr.ht/builds.sr.ht/compatibility.md))
 you will be working on.
+- Put it under `.builds/` in your repository
+- Adapt the `source` and `environment`* lists to match your needs
+    - Set the `language` field to "."
+- And you are good to go !
 
 ### Supported languages
 - [python (with anaconda)](https://git.sr.ht/~retzoh/manifest_templates/tree/master/python_anaconda/.builds)
