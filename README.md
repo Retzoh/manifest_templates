@@ -23,7 +23,7 @@ open the `.builds` folder and choose yml file named after the
 architecture ([man](https://man.sr.ht/builds.sr.ht/compatibility.md))
 you will be working on.
 - Put it under `.builds/` in your repository
-- Adapt the `source` and `environment`* lists to match your needs
+- Adapt the `source` and `environment` lists to match your needs
     - Set the `language` field to "."
 - And you are good to go !
 
