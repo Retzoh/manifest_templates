@@ -1,0 +1,61 @@
+image: archlinux
+packages:
+  - wget
+sources:
+  - https://git.sr.ht/~retzoh/manifest_templates
+environment:
+  repository_name: manifest_templates
+  package_name: python-example
+  package_path: python_example
+  language: python_anaconda
+tasks:
+  - install_conda: |
+      #Get & intall conda
+      wget -q http://repo.continuum.io/miniconda/\
+      Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
+      sh miniconda.sh -b -p $HOME/miniconda
+
+      #Store shell (conda) setup
+      echo 'export PATH="$HOME/miniconda/bin:$PATH"' >> ~/.shell_setup
+      echo '. /home/build/miniconda/etc/profile.d/conda.sh' >> ~/.shell_setup
+
+  - setup_project_conda: |
+      #Load the shell (conda) setup
+      . ~/.shell_setup
+
+      #For one single package:
+      #Create an environment, install project dependencies in it
+      cd $repository_name/$language; conda env create -q
+
+      ##For multiple packages:
+      ##Create & activate a work environment (with name package_name)
+      #conda create -q -n $package_name
+      #conda activate $package_name
+      #
+      ##Install one package's dependencies into the work environment
+      #cd $repository_name/$language
+      #conda env update -q -n $package_name
+
+  - setup_project_pip: |
+      . ~/.shell_setup
+      conda activate $package_name
+
+      # Install package & it's pip dependencies
+      cd $repository_name/$language
+      pip install -q .
+
+  - integration_test: |
+      . ~/.shell_setup
+      conda activate $package_name
+
+      # Run the tests
+      cd $repository_name/$language
+      pytest --cov=$package_path tests/
+
+  - run_project: |
+      . ~/.shell_setup
+      conda activate $package_name
+
+      # Run the tests
+      cd $repository_name/$language
+      python src/$package_path/__init__.py
