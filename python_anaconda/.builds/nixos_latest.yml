@@ -1,0 +1,61 @@
+image: nixos/latest
+sources:
+  - https://git.sr.ht/~retzoh/manifest_templates
+  - https://github.com/NixOS/nixpkgs.git
+environment:
+  repository_name: manifest_templates
+  package_name: python-example
+  package_folder: python_example
+  package_path: python_anaconda # Path to package from the root of the repository
+tasks:
+  - install_conda: |
+      # installing conda is a bit tricky
+      # It is on the nixos package repository:
+      # https://nixos.org/nixos/packages.html#conda
+      # But this version is badly outdated.
+      # $repository_name/$package_path/conda.nix contains an update installing
+      # the latest version
+
+      cp $repository_name/$package_path/conda.nix nixpkgs/pkgs/tools/package-management/conda/default.nix
+      nix-env -iAf nixpkgs conda
+
+      conda-shell conda-install
+
+      echo '. /home/build/.conda/etc/profile.d/conda.sh' >> ~/.shell_setup
+
+  - setup_project_conda: |
+      conda-shell -vc ". ~/.shell_setup; conda config --add channels conda-forge"
+      conda-shell -vc ". ~/.shell_setup; conda update -y -q --all"
+
+      #For one single package:
+      #Create an environment, install project dependencies in it
+      cd $repository_name/$package_path;
+      conda-shell -vc ". ~/.shell_setup; conda env create -q"
+      echo "conda activate $package_name" >>  ~/.shell_setup
+
+      ##For multiple packages:
+      ##Create & activate a work environment (with name package_name)
+      #conda-shell -vc ". ~/.shell_setup; conda create -q -n $package_name"
+      #echo "conda activate $package_name" >>  ~/.shell_setup
+      #
+      ##Install one package's dependencies into the work environment
+      #cd $repository_name/$package_path
+      #conda-shell -vc ". ~/.shell_setup; conda env update -q -n $package_name"
+
+  - setup_project_pip: |
+      # Install package & it's pip dependencies
+      cd $repository_name/$package_path
+      conda-shell -vc ". ~/.shell_setup; pip install -q ."
+
+  - check_dependencies: |
+      conda-shell -vc ". ~/.shell_setup; conda update --all --dry-run; pip list -o"
+
+  - integration_test: |
+      # Run the tests
+      cd $repository_name/$package_path
+      conda-shell -vc ". ~/.shell_setup; pytest --cov=$package_folder tests/"
+
+  - run_project: |
+      # Run the project
+      cd $repository_name/$package_path
+      conda-shell -vc ". ~/.shell_setup; python src/$package_folder/__init__.py"
