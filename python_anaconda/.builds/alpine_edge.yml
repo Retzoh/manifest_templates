@@ -7,7 +7,7 @@ environment:
   repository_name: manifest_templates
   package_name: python-example
   package_path: python_example
-  language: python_anaconda
+  language: python_anaconda # Path to package from the root of the repository
 tasks:
   - install_conda: |
       # Conda does not work out of the box on alpine. glibc needs to be
