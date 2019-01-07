@@ -72,6 +72,6 @@ tasks:
       . ~/.shell_setup
       conda activate $package_name
 
-      # Run the tests
+      # Run the project
       cd $repository_name/$package_path
       python src/$package_folder/__init__.py
