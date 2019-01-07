@@ -16,7 +16,7 @@ setup_params = dict(
 
     # pip dependencies declaration
     tests_require=[
-        "pytest==4.0.*",
+        "pytest==4.1.*",
         "pytest-cov==2.6.*",
     ],
     install_requires=[

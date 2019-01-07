@@ -12,5 +12,5 @@ dependencies:
   #management works better. (`conda search [package]` to find out)
   - setuptools=40.6
   #For tests
-  - pytest=4.0
+  - pytest=4.1
   - pytest-cov=2.6
