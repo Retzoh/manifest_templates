@@ -23,6 +23,9 @@ tasks:
       #Load the shell (conda) setup
       . ~/.shell_setup
 
+      conda config --add channels conda-forge
+      conda update -y -q --all
+
       #For one single package:
       #Create an environment, install project dependencies in it
       cd $repository_name/$language; conda env create -q
@@ -43,6 +46,13 @@ tasks:
       # Install package & it's pip dependencies
       cd $repository_name/$language
       pip install -q .
+
+  - check_dependencies: |
+      . ~/.shell_setup
+      conda activate $package_name
+
+      conda update --all --dry-run
+      pip list -o
 
   - integration_test: |
       . ~/.shell_setup
