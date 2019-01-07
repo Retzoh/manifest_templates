@@ -16,11 +16,11 @@ setup_params = dict(
 
     # pip dependencies declaration
     tests_require=[
-        "pytest>=3.*",
-        "pytest-cov",
+        "pytest==4.0.*",
+        "pytest-cov==2.6.*",
     ],
     install_requires=[
-        "setuptools",
+        "setuptools==40.6.*",
     ],
 
     # Tell where the source code for the package is located
