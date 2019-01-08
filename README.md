@@ -1,5 +1,5 @@
-Manifest templates
-==================
+Sr ht build manifest templates
+==============================
 
 This repository is a collection of language-specific CI setups for
 [sr.ht](https://meta.sr.ht/).
@@ -7,17 +7,30 @@ This repository is a collection of language-specific CI setups for
 Its purpose is to let you quickly setup new CI pipelines for your
 programming language by copying the appropriate manifest template.
 
-Send a mail to ~retzoh/manifest-templates-updates+subscribe@lists.sr.ht
-to subscribe to updates.
+Each language support comes with a "hello world" project on which the
+pipelines run.
 
-- [Use a template](#use-a-template)
+Subscribe to updates by sending a mail to
+~retzoh/manifest-templates-updates+subscribe@lists.sr.ht
+
+#### git.sh.ht repository
+https://git.sr.ht/~retzoh/manifest_templates
+#### github repository
+https://github.com/Retzoh/manifest_templates
+
+The master branches on sr.ht and github are synchronized through this
+[manifest](https://git.sr.ht/~retzoh/manifest_templates/tree/master/.build.yml)
+at each commit on master
+
+#### Index
+- [Setup a pipeline](#setup-a-pipeline)
   - [Supported languages](#supported-languages)
 - [Basic CI pipeline structure](#basic-ci-pipeline-structure)
 - [Repository structure](#repository-structure)
 - [Future work](#future-work)
 - [Discussion](#discussion)
 
-## Use a template
+## Setup a pipeline
 - Pick your language in the
 [repository tree](https://git.sr.ht/~retzoh/manifest_templates/tree),
 open the `.builds` folder and choose yml file named after the
@@ -25,7 +38,6 @@ architecture ([man](https://man.sr.ht/builds.sr.ht/compatibility.md))
 you will be working on.
 - Put it under `.builds/` in your repository
 - Adapt the `source` and `environment` lists to match your needs
-- And you are good to go !
 
 ### Supported languages
 - [python (with anaconda)](https://git.sr.ht/~retzoh/manifest_templates/tree/master/python_anaconda/.builds)
@@ -37,9 +49,6 @@ you will be working on.
 - run project tests
 - run the project
 
-Each language comes with a "hello world" project which the CI
-pipelines tests.
-
 ## Repository structure
 - `[languages]`
     - `.builds`
@@ -49,19 +58,16 @@ pipelines tests.
     - `tests`
         - minimal testing utilities to test the CI on
     - language-specific build/setup files
-- [CONTRIBUTING.md](https://git.sr.ht/~retzoh/manifest_templates/tree/master/CONTRIBUTING.md)
-- [README.md](https://git.sr.ht/~retzoh/manifest_templates/tree/master/README.md)
 
 ## Contributing
-Notes on how to contribute can be found in [CONTRIBUTING.md](https://git.sr.ht/~retzoh/manifest_templates/tree/master/CONTRIBUTING.md).
+Notes on how to contribute can be found in CONTRIBUTING.md
+[(sr.ht link)](https://git.sr.ht/~retzoh/manifest_templates/tree/master/CONTRIBUTING.md)
+, [(github link)](https://git.sr.ht/~retzoh/manifest_templates/tree/master/CONTRIBUTING.md).
 
 ## Future work
-- complete support for all images for [python (with anaconda)](https://git.sr.ht/~retzoh/manifest_templates/tree/master/python_anaconda/.builds)
-(nixos & freeBSD left)
-- enable github-based contribution (see [CONTRIBUTING.md](https://git.sr.ht/~retzoh/manifest_templates/tree/master/CONTRIBUTING.md)
-for details)
+- Include freeBSD support for [python (with anaconda)](https://git.sr.ht/~retzoh/manifest_templates/tree/master/python_anaconda/.builds)
 
 ## Discussion
 Have an issue or something to discuss about the project ?
 [This tracker](https://todo.sr.ht/~retzoh/manifest-templates-discussions)
-is the appropriate place.
+is the appropriate place to bring it up.
