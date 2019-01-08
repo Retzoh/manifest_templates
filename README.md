@@ -47,7 +47,7 @@ you will be working on.
 - build the project (if needed)
 - install the project (if needed)
 - run project tests
-- run the project
+- run project
 
 ## Repository structure
 - `[languages]`
@@ -62,7 +62,7 @@ you will be working on.
 ## Contributing
 Notes on how to contribute can be found in CONTRIBUTING.md
 [(sr.ht link)](https://git.sr.ht/~retzoh/manifest_templates/tree/master/CONTRIBUTING.md)
-, [(github link)](https://git.sr.ht/~retzoh/manifest_templates/tree/master/CONTRIBUTING.md).
+, [(github link)](https://github.com/Retzoh/manifest_templates/blob/master/CONTRIBUTING.md).
 
 ## Future work
 - Include freeBSD support for [python (with anaconda)](https://git.sr.ht/~retzoh/manifest_templates/tree/master/python_anaconda/.builds)
