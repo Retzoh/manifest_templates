@@ -4,7 +4,7 @@
 https://todo.sr.ht/~retzoh/manifest-templates-discussions
 #### Submit patches
 Send your patches to
-~retzoh/manifest-templates-contribution@lists.sr.ht.
+~retzoh/manifest-templates-contribution@lists.sr.ht
 #### Reviewing
 Submitted patches can be found there: https://lists.sr.ht/~retzoh/manifest-templates-contribution
 
