@@ -31,7 +31,7 @@ let
   version = "latest";
   src = fetchurl {
       url = "https://repo.continuum.io/miniconda/Miniconda3-${version}-Linux-x86_64.sh";
-      sha256 = "e5e5b4cd2a918e0e96b395534222773f7241dc59d776db1b9f7fedfcb489157a";
+      sha256 = "0d6b23895a91294a4924bd685a3a1f48e35a17970a073cd2f684ffe2c31fc4be";
   };
 
   conda = runCommand "conda-install" { buildInputs = [ makeWrapper ]; }
